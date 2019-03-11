@@ -111,7 +111,6 @@ try:
    cookie = response.cookies
    cookie.set('LtpaToken', '%s' %(cookie['LtpaToken']), domain='.unimedbh.com.br', path='/')
    cookie.set('LtpaToken2', '%s' %(cookie['LtpaToken2']), domain='.unimedbh.com.br', path='/')
-   cookie.set('amlbcookiehx', '%s' %(cookie['amlbcookiehx']), domain='.unimedbh.com.br', path='/')
    cookie.set('TMP_COOKIE_AX_EXTRANET', '%s' %(cookie['TMP_COOKIE_AX_EXTRANET']), domain='extranet.unimedbh.com.br', path='/')
    cookie.set('iPlanetDirectoryPro', '%s' %(tokenid), domain='.unimedbh.com.br', path='/')
 except KeyError:
