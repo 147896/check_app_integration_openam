@@ -95,8 +95,7 @@ except IndexError:
 #        sys.exit(2)
 
 # URL Base OpenAM.
-OpenAMBase = 'https://extranethml.unimedbh.com.br/openam/json'
-
+OpenAMBase = 'your sso url'
 headers = {
    'X-OpenAM-Username': '%s' %(username),
    'X-OpenAM-Password': '%s' %(password),
