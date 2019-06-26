@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# created by Gabriel Ribas (gabriel.ribass@gmail.com)
 import requests, sys, json, getopt
 import logging, httplib
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
