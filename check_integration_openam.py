@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# created by Gabriel Ribas (gabriel.ribass@gmail.com)
 import requests, sys, json, getopt
 import logging, httplib
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -94,8 +95,7 @@ except IndexError:
 #        sys.exit(2)
 
 # URL Base OpenAM.
-OpenAMBase = 'https://extranethml.unimedbh.com.br/openam/json'
-
+OpenAMBase = 'your sso url'
 headers = {
    'X-OpenAM-Username': '%s' %(username),
    'X-OpenAM-Password': '%s' %(password),
@@ -109,11 +109,11 @@ try:
    auth_time = response.elapsed.total_seconds()
    tokenid = json.loads(response.text)['tokenId']
    cookie = response.cookies
-   cookie.set('LtpaToken', '%s' %(cookie['LtpaToken']), domain='.unimedbh.com.br', path='/')
-   cookie.set('LtpaToken2', '%s' %(cookie['LtpaToken2']), domain='.unimedbh.com.br', path='/')
-   cookie.set('amlbcookiehx', '%s' %(cookie['amlbcookiehx']), domain='.unimedbh.com.br', path='/')
-   cookie.set('TMP_COOKIE_AX_EXTRANET', '%s' %(cookie['TMP_COOKIE_AX_EXTRANET']), domain='extranethml.unimedbh.com.br', path='/')
-   cookie.set('iPlanetDirectoryPro', '%s' %(tokenid), domain='.unimedbh.com.br', path='/')
+   cookie.set('LtpaToken', '%s' %(cookie['LtpaToken']), domain='your cookie domain information', path='/')
+   cookie.set('LtpaToken2', '%s' %(cookie['LtpaToken2']), domain='your cookie domain information', path='/')
+   cookie.set('amlbcookiehx', '%s' %(cookie['amlbcookiehx']), domain='your cookie domain information', path='/')
+   cookie.set('TMP_COOKIE_AX_EXTRANET', '%s' %(cookie['TMP_COOKIE_AX_EXTRANET']), domain='your cookie domain information', path='/')
+   cookie.set('iPlanetDirectoryPro', '%s' %(tokenid), domain='your cookie domain information', path='/')
 except KeyError:
    print('Incapaz de recuperar o OpenAM Token\nUsuario ou senha invalida..')
    sys.exit(2)
